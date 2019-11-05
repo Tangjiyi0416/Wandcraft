@@ -1,7 +1,7 @@
 dofile("mods/Wandcraft/lib/wand_edit_utilities.lua")
 table.insert( actions,{
 	id          = "WAND_ENCHANT_RELOAD_TIME",
-	name 		= "Faster Recharge Time",
+	name 		= "Reduce Recharge Time",
 	description = "How useful",
 	sprite 		= "mod/Wandcraft/files/Enchantments/orb.png",
 	type 		= ACTION_TYPE_PASSIVE,
