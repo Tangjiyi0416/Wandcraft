@@ -7,3 +7,10 @@ Hopefully, it will no longer be the case with this mod.
 This mod adds many upgrade spells for wands includiing "Reduce Recharge Time", "Anti-shuffle" and more!
 
 Hope you enjoy this mod. And if you have any suggestions be sure to leave me a comment!
+
+credits:
+	BlazesRus/Swiftmagiks/Etc
+	Zatherz
+	Horscht
+	kermit tears
+For so much help!
