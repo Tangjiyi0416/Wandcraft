@@ -33,5 +33,5 @@ end
 ]]--
 
 -- This code runs when all mods' filesystems are registered
-ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Wandcraft/files/Enchantments/actions.lua" ) -- Basically dofile("mods/example/files/actions.lua") will appear at the end of gun_actions.lua
+ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "files/Enchantments/actions.lua" ) -- Basically dofile("mods/example/files/actions.lua") will appear at the end of gun_actions.lua
 --print("Example mod init done")
