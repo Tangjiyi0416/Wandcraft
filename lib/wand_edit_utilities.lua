@@ -26,6 +26,28 @@ function GetCurrentWandAbilityComponent()
 	end
 	return GetWandAbilityComponent(wand_id)
 end
+
+function RemoveCard(action_id)
+	local children = EntityGetAllChildren(ComponentGetValue(EntityGetFirstComponent(GetUpdatedEntityID(), "Inventory2Component"), "mActiveItem"))
+	if children == nil then
+		--print("lonely and cold a childless wand can feel.")
+		return false
+	end
+	
+	for k,v in pairs(children) do
+		local comps = EntityGetAllComponents(v)
+		for k2,v2 in pairs(comps) do
+			local members = ComponentGetMembers(v2)
+			for k3,v3 in pairs(members) do
+				if k3 == "action_id" and action_id == v3 then
+					EntityKill(v)
+					return true
+				end
+			end
+		end
+	end
+	
+end
 --[[
 function GetWandActions( wand )
     local actions = {};
