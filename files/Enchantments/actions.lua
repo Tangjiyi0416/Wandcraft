@@ -27,7 +27,7 @@ table.insert( actions,{
 	type 		= ACTION_TYPE_OTHER,
 	spawn_level                       = "0,4,5,6", 
 	spawn_probability                 = "1,1,1,1",
-	price = 420,
+	price = 120,
 	mana = 0,
 	max_uses = -1,
 	action 	= function()
@@ -76,6 +76,25 @@ table.insert( actions,{
 			local mana_max = ComponentGetValue(abi_com, "mana_max")
 			ComponentSetValue(abi_com , "mana_max", tostring((tonumber(mana_max)+150)))
 			mana = mana_max+150
+			RemoveCard(c.action_id)
+		end
+	end,
+})
+table.insert( actions,{
+	id          = "WAND_ENCHANT_MANA_CHARGE_SPEED",
+	name 		= "Increase Wand Mana Charge Speed",
+	description = "It increases mana charge speed",
+	sprite 		= "files/Enchantments/increase_mana_mana_charge_speed.png",
+	type 		= ACTION_TYPE_OTHER,
+	spawn_level                       = "0,4,5,6", 
+	spawn_probability                 = "1,1,1,1", 
+	price = 210,
+	mana = 0,
+	action 		= function()
+		local abi_com = GetCurrentWandAbilityComponent()
+		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
+			local mana_charge_speed = ComponentGetValue(abi_com, "mana_charge_speed")
+			ComponentSetValue(abi_com , "mana_charge_speed", tostring((tonumber(mana_charge_speed)+35)))
 			RemoveCard(c.action_id)
 		end
 	end,
