@@ -4,7 +4,7 @@ Or a wonderful always-cast wand that is infact useless because of its more than 
 
 Hopefully, it will no longer be the case with this mod.
 
-This mod adds many upgrade spells for wands includiing "Reduce Recharge Time", "Anti-shuffle" and more!
+This mod adds some upgrade spells for wands includiing "Reduce Recharge Time", "Anti-shuffle" and more!
 
 Hope you enjoy this mod. And if you have any suggestions be sure to leave me a comment!
 
