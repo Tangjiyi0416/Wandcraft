@@ -118,3 +118,42 @@ table.insert( actions,{
 		end
 	end,
 })
+table.insert( actions,{
+	id          = "WAND_ENCHANT_ACTIONS_PER_ROUND",
+	name 		= "Increase Wand Actions Per Round",
+	description = "It increases actions per round",
+	sprite 		= "files/Enchantments/increase_actions_per_round.png",
+	type 		= ACTION_TYPE_OTHER,
+	spawn_level                       = "0,4,5,6", 
+	spawn_probability                 = "1,1,1,1", 
+	price = 420,
+	mana = 0,
+	action 		= function()
+		local abi_com = GetCurrentWandAbilityComponent()
+		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
+			local actions_per_round = ComponentObjectGetValue(abi_com , "gun_config", "actions_per_round")
+			ComponentObjectSetValue(abi_com , "gun_config", "actions_per_round", tostring((tonumber(actions_per_round)+1)))
+			gun.actions_per_round = actions_per_round
+			RemoveCard(c.action_id)
+		end
+	end,
+})
+table.insert( actions,{
+	id          = "WAND_ENCHANT_SPREAD_DEGREES",
+	name 		= "Reduces Wand Sprea Degrees",
+	description = "It increases spread degrees",
+	sprite 		= "files/Enchantments/reduce_spread_degrees.png",
+	type 		= ACTION_TYPE_OTHER,
+	spawn_level                       = "0,4,5,6", 
+	spawn_probability                 = "1,1,1,1", 
+	price = 210,
+	mana = 0,
+	action 		= function()
+		local abi_com = GetCurrentWandAbilityComponent()
+		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
+			local spread_degrees = ComponentObjectGetValue(abi_com , "gunaction_config", "spread_degrees")
+			ComponentObjectSetValue(abi_com , "gunaction_config", "spread_degrees", tostring((tonumber(spread_degrees)-1)))
+			RemoveCard(c.action_id)
+		end
+	end,
+})
