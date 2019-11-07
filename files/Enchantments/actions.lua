@@ -35,7 +35,7 @@ table.insert( actions,{
 		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
 			local fire_rate_wait = ComponentObjectGetValue(abi_com, "gunaction_config", "fire_rate_wait")
 			ComponentObjectSetValue(abi_com , "gunaction_config", "fire_rate_wait", tostring((tonumber(fire_rate_wait)-10)))
-			c.fire_rate_wait = fire_rate_wait-10
+			ACTION_DRAW_RELOAD_TIME_INCREASE = fire_rate_wait-10
 			RemoveCard(c.action_id)
 		end
 	end,
@@ -95,6 +95,25 @@ table.insert( actions,{
 		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
 			local mana_charge_speed = ComponentGetValue(abi_com, "mana_charge_speed")
 			ComponentSetValue(abi_com , "mana_charge_speed", tostring((tonumber(mana_charge_speed)+35)))
+			RemoveCard(c.action_id)
+		end
+	end,
+})
+table.insert( actions,{
+	id          = "WAND_ENCHANT_DECK_CAPACITY",
+	name 		= "Increase Wand Deck Capacity",
+	description = "It increases deck capacity",
+	sprite 		= "files/Enchantments/increase_deck_capacity.png",
+	type 		= ACTION_TYPE_OTHER,
+	spawn_level                       = "0,4,5,6", 
+	spawn_probability                 = "1,1,1,1", 
+	price = 210,
+	mana = 0,
+	action 		= function()
+		local abi_com = GetCurrentWandAbilityComponent()
+		if abi_com~=nil then  --credit kermit tears for solving the first time loading problem
+			local deck_capacity = ComponentObjectGetValue(abi_com , "gun_config", "deck_capacity")
+			ComponentObjectSetValue(abi_com , "gun_config", "deck_capacity", tostring((tonumber(deck_capacity)+1)))
 			RemoveCard(c.action_id)
 		end
 	end,
