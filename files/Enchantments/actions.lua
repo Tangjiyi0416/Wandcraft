@@ -147,7 +147,7 @@ table.insert( actions,{
 })
 table.insert( actions,{
 	id          = "WAND_ENCHANT_SPREAD_DEGREES",
-	name 		= "Reduces Wand Sprea Degrees",
+	name 		= "Reduces Wand Spread Degrees",
 	description = "It increases spread degrees",
 	sprite 		= "files/Enchantments/reduce_spread_degrees.png",
 	type 		= ACTION_TYPE_OTHER,
