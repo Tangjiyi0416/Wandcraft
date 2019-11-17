@@ -1,7 +1,7 @@
 
-function GetWandAbilityComponent(entity_id) --credit Zatherz && Horscht for the idea
+function GetWandAbilityComponent(wand_id) --credit Zatherz && Horscht for the idea
 
-    local components = EntityGetAllComponents(entity_id)--all components in wand
+    local components = EntityGetAllComponents(wand_id)--all components in wand
 	if components == nil then
 		print("can't get coms in wand")
 		return nil
@@ -41,7 +41,8 @@ function RemoveCard(action_id)
 			for k3,v3 in pairs(members) do
 				if k3 == "action_id" and action_id == v3 then
 					EntityKill(v)
-					return true
+					hand[1] = nil
+					return
 				end
 			end
 		end

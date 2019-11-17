@@ -16,6 +16,7 @@ table.insert( actions,{
 			ComponentObjectSetValue(abi_com , "gun_config", "shuffle_deck_when_empty", "false")
 			gun.shuffle_deck_when_empty = false
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -37,6 +38,7 @@ table.insert( actions,{
 			ComponentObjectSetValue(abi_com , "gunaction_config", "fire_rate_wait", tostring((tonumber(fire_rate_wait)-10)))
 			ACTION_DRAW_RELOAD_TIME_INCREASE = fire_rate_wait-10
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -57,6 +59,7 @@ table.insert( actions,{
 			ComponentObjectSetValue(abi_com , "gun_config", "reload_time", tostring((tonumber(reload_time)-10)))
 			current_reload_time = reload_time-10
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -77,6 +80,7 @@ table.insert( actions,{
 			ComponentSetValue(abi_com , "mana_max", tostring((tonumber(mana_max)+150)))
 			mana = mana_max+150
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -96,6 +100,7 @@ table.insert( actions,{
 			local mana_charge_speed = ComponentGetValue(abi_com, "mana_charge_speed")
 			ComponentSetValue(abi_com , "mana_charge_speed", tostring((tonumber(mana_charge_speed)+35)))
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -135,6 +140,7 @@ table.insert( actions,{
 			ComponentObjectSetValue(abi_com , "gun_config", "actions_per_round", tostring((tonumber(actions_per_round)+1)))
 			gun.actions_per_round = actions_per_round
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
@@ -154,6 +160,7 @@ table.insert( actions,{
 			local spread_degrees = ComponentObjectGetValue(abi_com , "gunaction_config", "spread_degrees")
 			ComponentObjectSetValue(abi_com , "gunaction_config", "spread_degrees", tostring((tonumber(spread_degrees)-1)))
 			RemoveCard(c.action_id)
+			c.fire_rate_wait = c.fire_rate_wait + 10
 		end
 	end,
 })
