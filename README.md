@@ -1,6 +1,6 @@
 # Wandcraft
 Have you ever found a almost-perfect wand that has all the stats you want but ruined by "Shuffle"?
-Or a wonderful always-cast wand that is, infact, useless because of its more than 2 sec recharge?
+Or a wonderful always-cast wand that is, in fact, useless because of its more than 2 sec recharge?
 
 Hopefully, it will no longer be the case with this mod.
 
